@@ -1,0 +1,84 @@
+class Silnik:
+    def __init__(self, moc, paliwo):
+        self.moc = moc
+        self.paliwo = paliwo
+
+    def pokaz(self):
+        print("Silnik:", self.moc, "KM,", "paliwo:", self.paliwo)
+
+
+class Armata:
+    def __init__(self, kaliber, zasieg):
+        self.kaliber = kaliber
+        self.zasieg = zasieg
+
+    def pokaz(self):
+        print("Armata:", self.kaliber, "mm,", "zasięg:", self.zasieg, "m")
+
+
+class Gasienice:
+    def __init__(self, szerokosc, stan):
+        self.szerokosc = szerokosc
+        self.stan = stan
+
+    def pokaz(self):
+        print("Gąsienice:", self.szerokosc, "cm,", "stan:", self.stan)
+
+
+class Pancerz:
+    def __init__(self, grubosc, material):
+        self.grubosc = grubosc
+        self.material = material
+
+    def pokaz(self):
+        print("Pancerz:", self.grubosc, "mm,", "materiał:", self.material)
+
+
+class Wieza:
+    def __init__(self, obrot, typ):
+        self.obrot = obrot
+        self.typ = typ
+
+    def pokaz(self):
+        print("Wieża:", self.typ + ",", "obrót:", self.obrot, "stopni")
+
+
+class Czolg:
+    def __init__(self, nazwa, silnik, armata, gasienice, pancerz, wieza):
+        self.nazwa = nazwa
+        self.silnik = silnik
+        self.armata = armata
+        self.gasienice = gasienice
+        self.pancerz = pancerz
+        self.wieza = wieza
+
+    def pokaz_informacje(self):
+        print("Nazwa czołgu:", self.nazwa)
+        self.silnik.pokaz()
+        self.armata.pokaz()
+        self.gasienice.pokaz()
+        self.pancerz.pokaz()
+        self.wieza.pokaz()
+
+    def jedz(self):
+        print(self.nazwa, "jedzie.")
+
+    def strzelaj(self):
+        print(self.nazwa, "strzela.")
+
+    def obroc_wieze(self):
+        print(self.nazwa, "obraca wieżę.")
+
+
+silnik1 = Silnik(1500, "diesel")
+armata1 = Armata(120, 3000)
+gasienice1 = Gasienice(70, "dobre")
+pancerz1 = Pancerz(800, "stal")
+wieza1 = Wieza(360, "obrotowa")
+
+czolg1 = Czolg("Leopard 2", silnik1, armata1, gasienice1, pancerz1, wieza1)
+
+czolg1.pokaz_informacje()
+czolg1.jedz()
+czolg1.strzelaj()
+czolg1.obroc_wieze()
